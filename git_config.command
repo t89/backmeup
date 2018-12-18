@@ -1,13 +1,13 @@
+#!/bin/bash
+
 printf "Please enter...\n"
 
-printf "...your full name:\n"
-read fullname
+read -p 'Full Name: ' fullname
 
-printf "...your email address:\n"
-read email
+read -p 'E-Mail: ' email
 
-git config --global user.name "$fullname"
 git config --global user.email "$email"
+git config --global user.name "$fullname"
 git config --global color.ui auto
 
 printf "\nConfig successfully written!"
