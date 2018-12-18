@@ -21,12 +21,14 @@ projectName="$(basename $cwd)"
 
 printf "\n\n\n"
 
-# Update
 bmu_path="$HOME/.backmeup"
+
+# Update
+# For security reasons I do not execute this automatically, but rather let them call the update manually
 if [ -d "$bmu_path" ]; then
-  echo "Updating Backup Script..."
+  # echo "Updating Backup Script..."
   cd $bmu_path
-  git pull origin master
+  # git pull origin master
 fi
 
 if [ ! -f "$bmu_path/destinations.txt" ]; then
