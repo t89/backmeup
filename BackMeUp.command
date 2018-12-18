@@ -22,10 +22,10 @@ cwd="${0%/*}"
 printf "\n\n\n"
 
 # Update
-nobsgit_path="$HOME/.nobsgit"
-if [ -d "$nobsgit_path" ]; then
+bmu_path="$HOME/.backmeup"
+if [ -d "$bmu_path" ]; then
   echo "Updating Backup Script..."
-  cd $nobsgit_path
+  cd $bmu_path
   git pull origin master
 fi
 
