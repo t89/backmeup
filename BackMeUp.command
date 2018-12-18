@@ -2,12 +2,11 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Backup Locations
-a="~/Dropbox"
+# HardCoded Backup Locations
+# a="~/Dropbox"
 # b="path/to/alternate/location"
 # bu_locations=($a $b)
 
-bu_locations=($a)
 
 # Name of the containing Backup Folder
 repoDirectoryName="Backup"
@@ -18,6 +17,7 @@ repoDirectoryName="Backup"
 # cwd=$(pwd)
 # Use this instead:
 cwd="${0%/*}"
+projectName="$(basename $cwd)"
 
 printf "\n\n\n"
 
@@ -29,12 +29,26 @@ if [ -d "$bmu_path" ]; then
   git pull origin master
 fi
 
+if [ ! -f "$bmu_path/destinations.txt" ]; then
+  echo "Missing destinations.txt file. Aborting."
+  exit 1
+fi
+
+line_count=0
+while read line; do
+  bu_locations[$line_count]="$line"
+  line_count=$line_count+1
+done <"$bmu_path/destinations.txt"
+
 # Initiate local Git Repository
 if [ ! -d "$cwd/.git" ]; then
 
   # The following cd is SUPER important to avoid creating a git repository within $HOME
   cd $cwd
   git init
+
+  # Create gitignore
+  echo "*.command" > .gitignore
 
   git add .
   git commit -m "Initial Commit"
