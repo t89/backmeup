@@ -28,7 +28,7 @@ $ mv backmeup .backmeup
 $ cd <path>
 
 # 8. Create hard link to script
-$ ln -s ~/.backmeup/BackMeUp.command
+$ ln -h ~/.backmeup/BackMeUp.command
 ```
 
 ## Run
