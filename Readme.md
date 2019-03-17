@@ -18,7 +18,7 @@ $ git clone https://github.com/beulenyoshi/backmeup.git
 # 4. Set execution rights
 $ chmod 777 # Did I mention you really shouldn't use this script unless you trust me?
 
-# 5. (Optional: Execute git config)
+# 5. (Optional: Execute git config to set up git user. This step is a reminder, if you are setting this up for someone who never used git before)
 
 # 6. Enter home directory and rename / hide folder
 $ cd
