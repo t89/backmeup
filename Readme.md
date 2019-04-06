@@ -11,7 +11,7 @@ This script has been written to provide an _easy to use_ backup solution *for fr
 $ cd
 
 # 2. Download files
-$ git clone https://github.com/beulenyoshi/backmeup.git
+$ git clone https://github.com/t89/backmeup.git
 
 # 3. Enter directory and add a 'destinations.txt' file containing backup paths (see sample file)
 
